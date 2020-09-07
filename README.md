@@ -23,11 +23,11 @@ Dans un premier temps, vous allez construire deux pages HTML, une pour l'accueil
 
 Vous téléchargerez ensuite un fichiers CSS et des images pour le rendre agréable à voir.
 
-**1.1 Créez un dossier** `tpjs` sur le bureau de votre ordinateur
+**1.1 Créez un dossier** `tpjs` sur le bureau de votre ordinateur et ouvrez un éditeur de texte standard (Notepad++, Wordpad, ...)
 
-**1.2** Ouvrez un éditeur de texte standard (Notepad++, Wordpad, ...), **créez un fichier** `my_music.html` et enregistrez le dans le dossier
+**1.2 Créez un fichier** `my_music.html` et enregistrez le dans le dossier
 
-Copiez le corps du code suivant avec notamment l'appel à la fiche CSS `<link rel="stylesheet" href="style.css" />`
+**-> Copiez le corps du code HTML** suivant avec notamment l'appel à la fiche CSS `<link rel="stylesheet" href="style.css" />`
 
 ```
 <!DOCTYPE html>
@@ -80,7 +80,7 @@ A l'intérieur des balises `<body>` et `<div id="bloc_page">`, insérez successi
 ```
 
 
-**-> le corps de la page** avec une partie `article` contenant un titre et du texte aléatoire et une partie `aside` contenant des infos sur l'auteur
+**-> le contenu principal de la page** avec une partie `article` contenant un titre et du texte aléatoire et une partie `aside` contenant des infos sur l'auteur
 
 ```
             <section>
@@ -98,7 +98,33 @@ A l'intérieur des balises `<body>` et `<div id="bloc_page">`, insérez successi
             </section>
 ```
 
-**1.3**
+**1.3 Créez un autre fichier**  `call_deezer.html` au même endroit que le précédent. Reprenez de la même façon, le corps du code HTML et le header (pas la bannière, ni le contenu)
+
+A la place du contenu précédent, copiez celui-ci 
+
+```
+            <section>
+                <article>
+                    <h1><img src="images/ico_epingle.png" alt="Catégorie voyage" class="ico_categorie" />Ma Playlist</h1>
+                    <h2 id='presplaylist'>
+                    </h2>
+                    <h4 id='playlist'>
+                    </h4>
+
+                </article>       
+            </section>
+```
+
+Ce contenu indique notamment deux éléments vides pour l'instant identifiés par 
+  * `id='presplaylist'` qui servira à présenter la playlist (titre et description)
+  * `id='playlist'` qui servira à présenter les chansons
+
+**1.4 Modifiez les liens de navigation** dans ces deux fichiers pour que les deux liens de navigation soient fonctionnels (voir les éléments `<a href=` dans la navigation)
+
+A partir de là, le contenu HTML est lisible (mais moche). Vous pouvez le tester dans un navigateur
+
+**1.5 Téléchargez le fichier ZIP** suivant []() et extrayez les données 
+
 
 ### 2 - L'API de Deezer
 
