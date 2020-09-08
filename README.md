@@ -2,6 +2,8 @@
 
 ## TP de Javascript pour élèves de 2de - durée 1H
 
+#### Interrogation par API de données publiques 
+
 #### Prérequis, connaître les bases du HTML et le principe des balises
 
 Le but de ce TP est de vous faire découvrir l'utilisation d'un langage web, le JavaScript (ou JS) et le principe d'un service web
