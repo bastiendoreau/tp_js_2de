@@ -123,9 +123,28 @@ Ce contenu indique notamment deux éléments vides pour l'instant identifiés pa
 
 A partir de là, le contenu HTML est lisible (mais moche). Vous pouvez le tester dans un navigateur
 
-**1.5 Téléchargez le fichier ZIP** suivant []() et extrayez les données 
+**1.5 Téléchargez le fichier ZIP** suivant [tpjs.zip](https://github.com/bastiendoreau/tp_js_2de/raw/master/tpjs.zip) et extrayez les données dans le dossier `tpjs`
+
+Et voilà, votre site est joli (vide mais joli)
 
 
 ### 2 - L'API de Deezer
+
+Deezer, comme beaucoup d'entreprises a envie de permettre à d'autres applications d'utiliser son contenu. Pour cela elle a créé une [API](https://fr.wikipedia.org/wiki/Interface_de_programmation), c'est à dire un service web permettant d'obtenir des données de la base de données de Deezer.
+
+Pour proposer le maximum d'information en peu de place, le format des données est du texte pur structuré de façon précise. Pour Deezer, le format présenté est le [JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation). Les autres formats structurés que l'on peut trouver pour des services web sont le XML ou encore le CSV par exemple.
+
+Si à cet instant du TP, vous vous sentez perdu, allez [ici](http://www.perdu.com/)
+
+**Quelqu'un a créé une playlist** sur Deezer, l'a partagé et l'a rendu publique, il vous a juste fourni le numéro de sa playlist `8095604822`
+
+La page web de Deezer suivante montre comment appeler une playlist par l'API -> [https://developers.deezer.com/api/playlist](https://developers.deezer.com/api/playlist)
+
+Vous pourrez aussi voir sur cette page les différentes informations que l'on peut trouver par l'appel d'une playlist
+
+Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur
+
+Comme vous pouvez le voir dans le menu de gauche, Deezer permet d'interroger beaucoup d'autres éléments, un album, un artiste ...
+
 
 ### 3 - Appel de l'API en JS
