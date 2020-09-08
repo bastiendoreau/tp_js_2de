@@ -4,7 +4,7 @@
 
 #### Prérequis, connaître les bases du HTML et le principe des balises
 
-Le but de ce TP est de vous faire découvrir l'utilisation d'un langage web, le JavaScript (ou JS)
+Le but de ce TP est de vous faire découvrir l'utilisation d'un langage web, le JavaScript (ou JS) et le principe d'un service web
 
 JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives. Avec les technologies HTML et CSS, JavaScript est l'une des technologies cœur du web [... Wikipedia](https://fr.wikipedia.org/wiki/JavaScript)
 
@@ -142,9 +142,13 @@ La page web de Deezer suivante montre comment appeler une playlist par l'API -> 
 
 Vous pourrez aussi voir sur cette page les différentes informations que l'on peut trouver par l'appel d'une playlist
 
-Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur
+Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur 
 
 Comme vous pouvez le voir dans le menu de gauche, Deezer permet d'interroger beaucoup d'autres éléments, un album, un artiste ...
 
+Maintenant que vous savez où sont les données en JSON, vous allez les chercher pour les intégrer à votre site
+
 
 ### 3 - Appel de l'API en JS
+
+
