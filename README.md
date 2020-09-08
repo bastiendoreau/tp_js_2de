@@ -132,7 +132,26 @@ Et voilà, votre site est joli (vide mais joli)
 
 Deezer, comme beaucoup d'entreprises a envie de permettre à d'autres applications d'utiliser son contenu. Pour cela elle a créé une [API](https://fr.wikipedia.org/wiki/Interface_de_programmation), c'est à dire un service web permettant d'obtenir des données de la base de données de Deezer.
 
-Pour proposer le maximum d'information en peu de place, le format des données est du texte pur structuré de façon précise. Pour Deezer, le format présenté est le [JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation). Les autres formats structurés que l'on peut trouver pour des services web sont le XML ou encore le CSV par exemple.
+Pour proposer le maximum d'information en peu de place, le format des données est du texte pur structuré de façon précise. Pour Deezer, le format présenté est le [JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation). Les autres formats structurés que l'on peut trouver pour des services web sont le XML ou encore le YAML par exemple.
+
+Le JSON permet de présenter des objets et des listes d'objets, ci dessous l'objet `classe` comprend un objet `id` ayant comme valeur 123, un objet `classe2de` et un dernier objet `listusers` qui est un tableau contenant des objets `users` chacun définis par un nom et prénom
+
+
+```
+{
+    "classe": {
+        "id": 123,
+        "classe2de": "Seconde B",
+        "listusers": {
+            "users": [
+                { "nom": "Dupont", "prenom": "Toto" },
+                { "nom": "Durand", "prenom": "Titi" },
+                { "nom": "Duchemin", "prenom": "Kéké" }
+            ]
+        }
+    }
+}
+```
 
 Si à cet instant du TP, vous vous sentez perdu, allez [ici](http://www.perdu.com/)
 
@@ -142,7 +161,7 @@ La page web de Deezer suivante montre comment appeler une playlist par l'API -> 
 
 Vous pourrez aussi voir sur cette page les différentes informations que l'on peut trouver par l'appel d'une playlist
 
-Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur 
+Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur (faites vérifier par votre professeur)
 
 Comme vous pouvez le voir dans le menu de gauche, Deezer permet d'interroger beaucoup d'autres éléments, un album, un artiste ...
 
