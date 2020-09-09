@@ -269,4 +269,117 @@ Pour aller plus loin dans le javascript :
   
 ### 4 - Appel de l'API en JS
 
-Vous allez maintenant 
+Vous allez maintenant utiliser une fonction toute faite `XMLHttpRequest` pour faire une requête HTTP vers l'API de Deezer
+
+Dans un premier temps, vous allez intégrer un script qui va télécharger le code permettant d'utiliser ces fonctions. Placez ce premier script en bas de votre page `call_deezer.html` (juste avant la balise `</body>`)
+
+```
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+```
+
+Juste au dessus, créez un nouveau script qui utilisera la fonction `XMLHttpRequest`. Ce script va :
+  * créer un objet XMLHttpRequest
+  * définir l'URL sur laquelle on veut pointer
+  * écrire une fonction qui sera effectuée si la requête est réussie (c'est là qu'on a placé un point de contrôle avec `alert("ok")`
+  * lancer la requête `xhr.send();`
+
+```
+<script>
+    // Definition d'un objet XMLHttpRequest 
+    var xhr = new XMLHttpRequest();
+
+    //defintion d"une variable pour l'URL de Deezer
+    var url = "https://api.deezer.com/playlist/8095604822"
+    
+    // on cree une fonction qui sera appelee quand l'etat de la requete sera modifiee (qd toutes les infos seront recuperees)
+    xhr.onreadystatechange = function() {
+      // on verifie que la requete est reussie (code HTTP 200)
+      if (xhr.readyState == 4 && xhr.status == 200) 
+      { 
+        // On verifie qu'on arrive bien jusqu'ici
+        alert("ok")
+      }
+    }; // Fin de la fonction
+    
+    // On lance la requete HTTP de type GET avec la bonne URL
+    xhr.open("GET", url, true);   
+    xhr.send();
+</script>
+```
+
+Que se passe-t-il ?  --> Rien. La requête ne marche pas ou quelque chose bloque. Voyons ce qu'il se passe en regardant la console du navigateur
+
+Dans Firefox, ouvrir le menu puis `Développement web` puis `Outils de développement`, la console s'ouvre. Cliquez sur l'onglet `Console` (sous Chromium menu, `plus d'outils` et `outils de développement`)
+
+Le point de blocage est expliqué --> `l’en-tête CORS « Access-Control-Allow-Origin » est manquant`
+
+Aïe, cela signifie que cette API n'est pas faite pour être utilisée par une simple page web mais par un serveur. Heureusement, il est possible de passer par un serveur qui enverra cette URL à votre place. Vous allez donc devoir tricher et modifier votre url. 
+
+Remplacez
+
+```
+    //defintion d"une variable pour l'URL de Deezer
+    var url = "https://api.deezer.com/playlist/8095604822"
+```
+
+par 
+
+```
+    //defintion d"une variable pour l'URL permettant de contourner le blocage de Deezer  
+    var url_heroku = "https://cors-anywhere.herokuapp.com/"
+
+    //defintion d"une variable pour l'URL de Deezer
+    var url_deezer = "https://api.deezer.com/playlist/8095604822"
+    
+    // on cree une nouvelle URL a partir des deux URLs
+    var url = url_heroku + url_deezer
+```
+
+Cela fonctionne, on voit le message d'alerte.
+
+Maintenant, vous allez remplacez ce message d'alerte par le code suivant qui récupère le contenu de la requête en JSON et appelle une nouvelle fonction
+
+```
+        // On recupere le contenu de la requete (xhr.responseText) en la traduisant en JSON
+        var jsonData = JSON.parse(xhr.responseText);
+        
+        // On appelle la fonction getPlaylist en lui envoyant le JSON en parametre
+        getPlaylist(jsonData);
+```
+
+Et bien sur écrire la fonction `getPlaylist` après `xhr.send` et avant la balise de fin de script `</script>`
+
+```
+    // fonction permettant de boucler sur toutes les donnees de la liste tracks (voir le résultat du JSON)
+    // On recuperera le lien de la chanson, son titre, son auteur et sa duree, on placera toutes ces infos
+    // dans du code HTML
+    function getPlaylist(data) {
+        var outputPl = ""; // Ouverture de la liste des chansons
+        var pub;
+        
+        // Boucle sur toutes les chansons , on remplit l'element outputPl avec des informations lues dans le JSON
+        for (var pub in data.tracks.data) {
+    
+            outputPl += "<a href=\"" + data.tracks.data[pub].link + "\">" + data.tracks.data[pub].title + "</a>  "+ 
+            " -> " + data.tracks.data[pub].artist.name;
+    
+            outputPl += " (" + data.tracks.data[pub].duration + " s)";
+    
+            outputPl += "</br></br> ";
+        }
+        outputPl += ""; // Fermeture de la liste
+    
+        // on place le contenu que l'on vient de creer dans le code HTML ayant l'id playlist
+        document.getElementById("playlist").innerHTML = outputPl;
+    }
+```
+
+Bravo, vous avez utilisé un service web et codé en JS pour appeler une API
+
+Dernier exercice, vous devez écrire une fonction `getPresplaylist` permettant de recuperer le titre de la playlist, sa description, son auteur et le nb de chansons.
+
+Le contenu doit être envoyé dans l'élément HTML ayant l'id `presplaylist`
