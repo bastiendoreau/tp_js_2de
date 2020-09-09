@@ -201,9 +201,11 @@ Vous devez faire un script calculant l'IMC (indice de masse corporelle) d'une pe
 
 Dans ce script demandez le poids en kg, puis la taille en mètres. Effectuez le calcul suivant `IMC=poids/(taille*taille)` et affichez l'IMC
 
-Le résultat est inférieur à 1 ou supérieur à 100 ? Cliquez [ici](https://media.giphy.com/media/12vVdbq7jtkiSk/giphy.mp4)
+Le résultat est inférieur à 1 ou supérieur à 100 ? Cliquez [ici](https://giphy.com/gifs/12vVdbq7jtkiSk/html5)
 
 Le résultat est compris entre 15 et 40 ? vous pouvez continuer le TP
+
+### 4 - Premier exercice en Javascript
 
 Un des gros intérêts du JS est aussi l'interaction avec des élements de la page web.
 
@@ -237,7 +239,7 @@ Créez une page HTML `mdp.html` et insérez le code suivant
 
 Vous avez écrit un formulaire demandant un mot de passe ainsi que sa confirmation. Vous pouvez voir dans la balise `button` le texte `onclick="validate()`. Cela indique que lorsqu'un utilisateur cliquera sur ce bouton, la fonction `validate` d'un script sera appelée
 
-Rajoutez le script suivant dans cette page, actualisez la page et testez le formulaire
+Rajoutez le script suivant dans cette page après le formulaire (après `</form>`), actualisez la page et testez le formulaire
 
 ```
     <script  type="text/javascript">
@@ -267,7 +269,7 @@ Pour aller plus loin dans le javascript :
   * Cours sur le javascript [openclassroom](https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript)
   * Tester son script rapidement dans une interface en ligne [JSFiddle](https://jsfiddle.net/)
   
-### 4 - Appel de l'API en JS
+### 5 - Appel de l'API en JS
 
 Vous allez maintenant utiliser une fonction toute faite `XMLHttpRequest` pour faire une requête HTTP vers l'API de Deezer
 
@@ -383,3 +385,5 @@ Bravo, vous avez utilisé un service web et codé en JS pour appeler une API
 Dernier exercice, vous devez écrire une fonction `getPresplaylist` permettant de recuperer le titre de la playlist, sa description, son auteur et le nb de chansons.
 
 Le contenu doit être envoyé dans l'élément HTML ayant l'id `presplaylist`
+
+Merci d'avoir suivi ce TP
