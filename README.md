@@ -262,7 +262,7 @@ Vous avez écrit un formulaire demandant un mot de passe ainsi que sa confirmati
 **4.3 Analysez ce script :**
   * la fonction validate se déclare avec le mot-clé `function` et avec des parenthèses. Son contenu est entre `{` et `}`
   * on récupère une valeur d'un élément HTML par son `id`. `document.getElementById("mdp1")` va chercher ce qu'il y a dans l'élément HTML contenant `id="mdp1"`
-  * le JS est un langage de programmation, il est possible d'utiliser des boucles, des conditions, ... Ici, on fait une condition sur l'égalité entre les variables m1 et m2
+  * le JS est un langage de programmation, il est possible d'utiliser des boucles, des conditions, ... Ici, on fait une condition sur l'égalité entre les variables m1 et m2.  `if (m1!=m2)`  signifie `si m1 différent de m2`
 
 **4.4 Aller plus lon**
 
