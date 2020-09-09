@@ -194,7 +194,79 @@ Analysons ce script :
   * `saisie` doit être déclarée comme variable grace au mot-clé `var`
   * On peut modifier cette variable, ici on a rajouté du texte devant. Le texte rajouté doit être entre guillemets pour bien indiquer qu'il s'agit de texte et pas de commandes JS
   * On peut afficher dans une fenêtre le contenu d'une variable avec la commande `alert`
+  
+Vous allez faire un premier exercice simple (toujours dans `my_music.html`). Supprimez tout d'abord le script précédent.
 
-### 3 - Appel de l'API en JS
+Vous devez faire un script calculant l'IMC (indice de masse corporelle) d'une personne.
+
+Dans ce script demandez le poids en kg, puis la taille en mètres. Effectuez le calcul suivant `IMC=poids/(taille*taille)` et affichez l'IMC
+
+Le résultat est inférieur à 1 ou supérieur à 100 ? Cliquez [ici](https://media.giphy.com/media/12vVdbq7jtkiSk/giphy.mp4)
+
+Le résultat est compris entre 15 et 40 ? vous pouvez continuer le TP
+
+Un des gros intérêts du JS est aussi l'interaction avec des élements de la page web.
+
+Le principe est de distinguer un élément de la page par un identifiant et d'exécuter du script en lien avec cet élément en particulier.
+
+Créez une page HTML `mdp.html` et insérez le code suivant
+
+```
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vérification de mots de passe</title>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="mdp1">Saisissez le mot de passe</label> :
+            <input type="password" name="mdp1" id="mdp1" required>
+        </p>
+        <p>
+            <label for="mdp2">Confirmez le mot de passe</label> :
+            <input type="password" name="mdp2" id="mdp2" required>
+        </p>
+
+        <button onclick="validate()">Valider</button><br>
+    </form>
+</body>
+</html>
+```
+
+Vous avez écrit un formulaire demandant un mot de passe ainsi que sa confirmation. Vous pouvez voir dans la balise `button` le texte `onclick="validate()`. Cela indique que lorsqu'un utilisateur cliquera sur ce bouton, la fonction `validate` d'un script sera appelée
+
+Rajoutez le script suivant dans cette page, actualisez la page et testez le formulaire
+
+```
+    <script  type="text/javascript">
+    function validate() { 
+        var m1 =  document.getElementById("mdp1").value;
+        var m2 =  document.getElementById("mdp2").value;
+
+        if (m1!=m2) {
+            alert("Les mots de passe sont différents. Recommencez")
+            return false;
+            }
+        else {
+            alert("Les mots de passe sont identiques. C'est bon");
+            return true;
+            }
+    }
+    </script>
+```
+
+Analysons ce script :
+  * la fonction validate se déclare avec le mot-clé `function` et avec des parenthèses. Son contenu est entre `{` et `}`
+  * on récupère une valeur d'un élément HTML par son `id`. `document.getElementById("mdp1")` va chercher ce qu'il y a dans l'élément HTML contenant `id="mdp1"`
+  * le JS est un langage de programmation, il est possible d'utiliser des boucles, des conditions, ... Ici, on fait une condition sur l'égalité entre les variables m1 et m2
 
 
+Pour aller plus loin dans le javascript :
+  * Cours sur le javascript [openclassroom](https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript)
+  * Tester son script rapidement dans une interface en ligne [JSFiddle](https://jsfiddle.net/)
+  
+### 4 - Appel de l'API en JS
+
+Vous allez maintenant 
