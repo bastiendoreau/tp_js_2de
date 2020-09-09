@@ -48,7 +48,7 @@ Vous téléchargerez ensuite un fichiers CSS et des images pour le rendre agréa
 </html>    
 ```
 
-A l'intérieur des balises `<body>` et `<div id="bloc_page">`, insérez successivement
+Entre les balises `<body>` `<div id="bloc_page">` et ` </div>` `</body>` insérez successivement
 
 **-> le header de la page** contenant l'entête de la page et les éléments de navigation 
 
