@@ -381,6 +381,10 @@ Et bien sur écrire la fonction `getPlaylist` après `xhr.send` et avant la bali
     }
 ```
 
+Pour bien comprendre ce que vous récupérez comme données, faites le parallèle avec les [données JSON de l'API](https://api.deezer.com/playlist/8095604822)
+
+On voit par exemple que le code `data.tracks.data[pub].title`  quand `[pub]` vaut 0 correspond à la valeur `Seine Saint-Denis Style`
+
 Bravo, vous avez utilisé un service web et codé en JS pour appeler une API
 
 **5.6 Dernier exercice**, vous devez écrire une fonction `getPresplaylist` permettant de recuperer le titre de la playlist, sa description, son auteur et le nb de chansons.
