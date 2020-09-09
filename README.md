@@ -170,6 +170,31 @@ Comme vous pouvez le voir dans le menu de gauche, Deezer permet d'interroger bea
 Maintenant que vous savez où sont les données en JSON, vous allez les chercher pour les intégrer à votre site
 
 
+### 3 - Principe du Javascript
+
+La Javascript est un langage de programmation qui doit être éxécuté (càd lu et compris). C'est le navigateur (ou d'autres fichiers javascript) qui pourront éxécuter ce code.
+
+C'est donc le navigateur du client (celui qui ouvre la page web) qui est utilisé, et pas le serveur qui fait ce travail. Avantage : c'est le client qui doit fournir de la puissance de calcul et pas le serveur ; inconvénient : le navigateur du client doit être à jour ou le script JS peut planter.
+
+Ainsi, on retrouve un script JS directement dans une page HTML. On le trouve en général en fin de page, juste avant la fermeture de la balise `body`, il sera donc éxécuté après la lecture du HTML.
+
+Insérez le script suivant juste avant la balise  `</body>` dans la page `my_music.html` puis actualisez la page
+
+```
+<script>
+    var saisie = prompt('Ecrire du texte');
+    saisie = "Vous avez écrit "+saisie
+    alert(saisie)
+</script>
+```
+
+Analysons ce script :
+  * En premier lieu, on peut voir que ce script JS pour être identifié comme tel est entre des balises `<script>` et `</script>` 
+  * la première ligne va ouvrir une fenêtre demandant une saisie à l'utilisateur gràce à la commande `prompt` et enregistrer le résultat dans la variable `saisie`
+  * `saisie` doit être déclarée comme variable grace au mot-clé `var`
+  * On peut modifier cette variable, ici on a rajouté du texte devant. Le texte rajouté doit être entre guillemets pour bien indiquer qu'il s'agit de texte et pas de commandes JS
+  * On peut afficher dans une fenêtre le contenu d'une variable avec la commande `alert`
+
 ### 3 - Appel de l'API en JS
 
 
