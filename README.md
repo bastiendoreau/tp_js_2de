@@ -159,11 +159,11 @@ Si à cet instant du TP, vous vous sentez perdu, allez [ici](http://www.perdu.co
 
 **Quelqu'un a créé une playlist** sur Deezer, l'a partagé et l'a rendu publique, il vous a juste fourni le numéro de sa playlist `8095604822`
 
-La page web de Deezer suivante montre comment appeler une playlist par l'API -> [https://developers.deezer.com/api/playlist](https://developers.deezer.com/api/playlist)
+**2.1 La page web de Deezer suivante** montre comment appeler une playlist par l'API -> [https://developers.deezer.com/api/playlist](https://developers.deezer.com/api/playlist)
 
 Vous pourrez aussi voir sur cette page les différentes informations que l'on peut trouver par l'appel d'une playlist
 
-Définissez l'URL permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur (faites vérifier par votre professeur)
+**2.2 Définissez l'URL** permettant d'appeler la bonne playlist, ouvrez la dans une page web (de préférence sur Firefox) et notez le titre de la playlist ainsi que son auteur (faites vérifier par votre professeur)
 
 Comme vous pouvez le voir dans le menu de gauche, Deezer permet d'interroger beaucoup d'autres éléments, un album, un artiste ...
 
@@ -178,7 +178,7 @@ C'est donc le navigateur du client (celui qui ouvre la page web) qui est utilis�
 
 Ainsi, on retrouve un script JS directement dans une page HTML. On le trouve en général en fin de page, juste avant la fermeture de la balise `body`, il sera donc éxécuté après la lecture du HTML.
 
-Insérez le script suivant juste avant la balise  `</body>` dans la page `my_music.html` puis actualisez la page
+**3.1 Insérez le script suivant** juste avant la balise  `</body>` dans la page `my_music.html` puis actualisez la page
 
 ```
 <script>
@@ -188,16 +188,16 @@ Insérez le script suivant juste avant la balise  `</body>` dans la page `my_mus
 </script>
 ```
 
-Analysons ce script :
+**3.2 Analysez ce script :**
   * En premier lieu, on peut voir que ce script JS pour être identifié comme tel est entre des balises `<script>` et `</script>` 
   * la première ligne va ouvrir une fenêtre demandant une saisie à l'utilisateur gràce à la commande `prompt` et enregistrer le résultat dans la variable `saisie`
   * `saisie` doit être déclarée comme variable grace au mot-clé `var`
   * On peut modifier cette variable, ici on a rajouté du texte devant. Le texte rajouté doit être entre guillemets pour bien indiquer qu'il s'agit de texte et pas de commandes JS
   * On peut afficher dans une fenêtre le contenu d'une variable avec la commande `alert`
   
-Vous allez faire un premier exercice simple (toujours dans `my_music.html`). Supprimez tout d'abord le script précédent.
+**3.3** Vous allez faire un premier exercice simple (toujours dans `my_music.html`). **Supprimez tout d'abord le script précédent.**
 
-Vous devez faire un script calculant l'IMC (indice de masse corporelle) d'une personne.
+**3.4 Vous devez faire un script calculant l'IMC** (indice de masse corporelle) d'une personne.
 
 Dans ce script demandez le poids en kg, puis la taille en mètres. Effectuez le calcul suivant `IMC=poids/(taille*taille)` et affichez l'IMC
 
@@ -211,7 +211,7 @@ Un des gros intérêts du JS est aussi l'interaction avec des élements de la pa
 
 Le principe est de distinguer un élément de la page par un identifiant et d'exécuter du script en lien avec cet élément en particulier.
 
-Créez une page HTML `mdp.html` et insérez le code suivant
+**4.1 Créez une page HTML** `mdp.html` et insérez le code suivant
 
 ```
 <!doctype html>
@@ -239,7 +239,7 @@ Créez une page HTML `mdp.html` et insérez le code suivant
 
 Vous avez écrit un formulaire demandant un mot de passe ainsi que sa confirmation. Vous pouvez voir dans la balise `button` le texte `onclick="validate()`. Cela indique que lorsqu'un utilisateur cliquera sur ce bouton, la fonction `validate` d'un script sera appelée
 
-Rajoutez le script suivant dans cette page après le formulaire (après `</form>`), actualisez la page et testez le formulaire
+**4.2 Rajoutez le script suivant** dans cette page après le formulaire (après `</form>`), actualisez la page et testez le formulaire
 
 ```
     <script  type="text/javascript">
@@ -259,11 +259,12 @@ Rajoutez le script suivant dans cette page après le formulaire (après `</form>
     </script>
 ```
 
-Analysons ce script :
+**4.3 Analysez ce script :**
   * la fonction validate se déclare avec le mot-clé `function` et avec des parenthèses. Son contenu est entre `{` et `}`
   * on récupère une valeur d'un élément HTML par son `id`. `document.getElementById("mdp1")` va chercher ce qu'il y a dans l'élément HTML contenant `id="mdp1"`
   * le JS est un langage de programmation, il est possible d'utiliser des boucles, des conditions, ... Ici, on fait une condition sur l'égalité entre les variables m1 et m2
 
+**4.4 Aller plus lon**
 
 Pour aller plus loin dans le javascript :
   * Cours sur le javascript [openclassroom](https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript)
@@ -273,7 +274,7 @@ Pour aller plus loin dans le javascript :
 
 Vous allez maintenant utiliser une fonction toute faite `XMLHttpRequest` pour faire une requête HTTP vers l'API de Deezer
 
-Dans un premier temps, vous allez intégrer un script qui va télécharger le code permettant d'utiliser ces fonctions. Placez ce premier script en bas de votre page `call_deezer.html` (juste avant la balise `</body>`)
+**5.1** Dans un premier temps, vous allez **intégrer un script qui va télécharger le code permettant d'utiliser ces fonctions**. Placez ce premier script en bas de votre page `call_deezer.html` (juste avant la balise `</body>`)
 
 ```
     <script
@@ -283,7 +284,7 @@ Dans un premier temps, vous allez intégrer un script qui va télécharger le co
     </script>
 ```
 
-Juste au dessus, créez un nouveau script qui utilisera la fonction `XMLHttpRequest`. Ce script va :
+**5.2** Juste au dessus, **créez un nouveau script** qui utilisera la fonction `XMLHttpRequest`. Ce script va :
   * créer un objet XMLHttpRequest
   * définir l'URL sur laquelle on veut pointer
   * écrire une fonction qui sera effectuée si la requête est réussie (c'est là qu'on a placé un point de contrôle avec `alert("ok")`
@@ -313,7 +314,7 @@ Juste au dessus, créez un nouveau script qui utilisera la fonction `XMLHttpRequ
 </script>
 ```
 
-Que se passe-t-il ?  --> Rien. La requête ne marche pas ou quelque chose bloque. Voyons ce qu'il se passe en regardant la console du navigateur
+**5.3** Que se passe-t-il ?  --> Rien. La requête ne marche pas ou quelque chose bloque. **Voyons ce qu'il se passe en regardant la console du navigateur**
 
 Dans Firefox, ouvrir le menu puis `Développement web` puis `Outils de développement`, la console s'ouvre. Cliquez sur l'onglet `Console` (sous Chromium menu, `plus d'outils` et `outils de développement`)
 
@@ -321,7 +322,7 @@ Le point de blocage est expliqué --> `l’en-tête CORS « Access-Control-Allow
 
 Aïe, cela signifie que cette API n'est pas faite pour être utilisée par une simple page web mais par un serveur. Heureusement, il est possible de passer par un serveur qui enverra cette URL à votre place. Vous allez donc devoir tricher et modifier votre url. 
 
-Remplacez
+**5.4 Remplacez**
 
 ```
     //defintion d"une variable pour l'URL de Deezer
@@ -343,7 +344,7 @@ par
 
 Cela fonctionne, on voit le message d'alerte.
 
-Maintenant, vous allez remplacez ce message d'alerte par le code suivant qui récupère le contenu de la requête en JSON et appelle une nouvelle fonction
+**5.5** Maintenant, vous allez **remplacez ce message d'alerte par le code suivant** qui récupère le contenu de la requête en JSON et appelle une nouvelle fonction
 
 ```
         // On recupere le contenu de la requete (xhr.responseText) en la traduisant en JSON
@@ -382,7 +383,7 @@ Et bien sur écrire la fonction `getPlaylist` après `xhr.send` et avant la bali
 
 Bravo, vous avez utilisé un service web et codé en JS pour appeler une API
 
-Dernier exercice, vous devez écrire une fonction `getPresplaylist` permettant de recuperer le titre de la playlist, sa description, son auteur et le nb de chansons.
+**5.6 Dernier exercice**, vous devez écrire une fonction `getPresplaylist` permettant de recuperer le titre de la playlist, sa description, son auteur et le nb de chansons.
 
 Le contenu doit être envoyé dans l'élément HTML ayant l'id `presplaylist`
 
